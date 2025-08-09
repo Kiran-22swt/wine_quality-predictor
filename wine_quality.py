@@ -27,9 +27,6 @@ model = keras.Sequential([
 
 model.compile(optimizer='adam', loss='mse', metrics=['mae'])
 
-history = model.fit(X_train, y_train, epochs=50, batch_size=16,
-                    validation_split=0.2, verbose=1)
-
 y_pred = model.predict(X_test)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 mae = mean_absolute_error(y_test, y_pred)
